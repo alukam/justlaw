@@ -17,18 +17,42 @@
 
 <header class="detail-header">
     <div class="detail-nav">
-        <a class="detail-logo" href="index.html"><img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers Ltd."></a>
-        <nav>
+
+        <!-- Logo -->
+        <a class="detail-logo" href="index.html">
+            <img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers Ltd.">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav id="detail-navigation">
             <a href="index.html">Home</a>
             <a class="active" href="services.html">Services</a>
             <a href="about.html">About</a>
             <a href="caseStudies.html">Case Studies</a>
             <a href="blog.html">Blog</a>
         </nav>
-        <a class="detail-nav-btn" href="contact.html">Book a Consultation <span>→</span></a>
+
+        <!-- Desktop CTA -->
+        <a class="detail-nav-btn" href="contact.html">
+            Book a Consultation <span>→</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+            class="detail-mobile-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="detail-navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
     </div>
 </header>
-
 <main>
     <section class="detail-hero detail-hero-innovation">
         <div class="detail-hero-overlay"></div>
@@ -105,5 +129,55 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.slicknav.min.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script>
+    
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.querySelector(".detail-mobile-toggle");
+    const nav = document.querySelector("#detail-navigation");
+
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", function () {
+
+        const isOpen = nav.classList.toggle("mobile-open");
+
+        toggle.classList.toggle("active", isOpen);
+
+        toggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+    });
+
+
+    /* Close menu after clicking a link */
+
+    nav.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            nav.classList.remove("mobile-open");
+
+            toggle.classList.remove("active");
+
+            toggle.setAttribute("aria-expanded", "false");
+
+            toggle.setAttribute("aria-label", "Open navigation");
+
+        });
+
+    });
+
+});
+</script>
+</script>
+
 </body>
 </html>

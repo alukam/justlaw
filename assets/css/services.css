@@ -321,8 +321,16 @@ img {
     position: relative;
     min-height: 620px;
     padding-top: 100px;
+
+    /* Same deep-navy visual language as the Index hero */
+    background-color: #071a33 !important;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px) !important;
+    background-size: 70px 70px !important;
     background-position: center center !important;
-    background-size: cover !important;
+    background-repeat: repeat !important;
+    overflow: hidden;
 }
 
 .slider-area .single-slider::before {
@@ -332,26 +340,26 @@ img {
     background:
         linear-gradient(
             90deg,
-            rgba(4, 19, 38, 0.88) 0%,
-            rgba(7, 26, 51, 0.70) 45%,
-            rgba(7, 26, 51, 0.48) 100%
+            rgba(4, 19, 38, 0.94) 0%,
+            rgba(7, 26, 51, 0.78) 45%,
+            rgba(7, 26, 51, 0.58) 100%
         );
+    pointer-events: none;
 }
 
 .slider-area .single-slider::after {
     content: "";
     position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(
-            circle at 78% 30%,
-            rgba(66, 131, 228, 0.18),
-            transparent 32%
-        );
+    width: 520px;
+    height: 520px;
+    left: -360px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 85px solid rgba(66, 131, 228, 0.10);
+    border-radius: 50%;
+    box-sizing: border-box;
     pointer-events: none;
-}
-
-.slider-area .container,
+}.slider-area .container,
 .slider-area .row,
 .slider-area .col-xl-12,
 .slider-area .hero-cap {
@@ -420,6 +428,24 @@ img {
     line-height: 1.8;
 }
 
+
+/* Subtle Index-style blue dot accent */
+.slider-area .single-slider .container::before {
+    content: "";
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(
+        circle,
+        rgba(66, 131, 228, 0.55) 1.5px,
+        transparent 1.5px
+    );
+    background-size: 36px 36px;
+    opacity: 0.55;
+    pointer-events: none;
+}
 
 /* =========================================================
    SERVICES INTRO
@@ -854,15 +880,15 @@ img {
 }
 
 .footer-logo {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .footer-logo img {
     width: 78px;
     height: auto;
-    padding: 6px;
+    padding: 10px;
     background: var(--ailex-white);
-    border-radius: 9px;
+    border-radius: 100px;
 }
 
 .footer-tittle h4 {
