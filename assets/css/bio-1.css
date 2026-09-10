@@ -78,7 +78,7 @@ img { max-width: 100%; display: block; }
     width: 42px;
     height: 42px;
     object-fit: contain;
-    border-radius: 7px;
+    border-radius: 15px;
     position: relative;
     z-index: 2;
 }
@@ -109,7 +109,7 @@ img { max-width: 100%; display: block; }
     width: min(1240px, calc(100% - 40px));
     min-height: 74px;
     margin: 0 auto;
-    padding: 10px 12px 10px 20px;
+    padding: 20px 20px 20px 20px;
     display: flex;
     align-items: center;
     gap: 24px;
@@ -164,13 +164,24 @@ img { max-width: 100%; display: block; }
 }
 
 .main-nav a {
+    align-items: center;
+    justify-content: center;
     position: relative;
-    padding: 12px 0;
     color: #4b596c;
     font-size: 13px;
     font-weight: 600;
     transition: color .25s ease;
 }
+
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .main-nav a:hover,
 .main-nav a.active {

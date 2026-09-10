@@ -1,4 +1,3 @@
-
 /* =========================================================
    AILEX TINKERERS LTD. — PREMIUM LEGAL / AI / TECHNOLOGY CSS
    Designed to match the uploaded index.html
@@ -67,7 +66,6 @@ img {
     background: var(--navy);
 }
 
-
 /* =========================================
    AILEX TINKERERS PRELOADER
    ========================================= */
@@ -77,13 +75,10 @@ img {
     inset: 0;
     width: 100%;
     height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #071a33;
-
     z-index: 9999999;
 }
 
@@ -172,83 +167,129 @@ body.preloader-active {
     right: 0;
     z-index: 9990;
     padding: 18px 25px;
-    transition: padding .35s var(--ease);
+    transition: padding 0.35s var(--ease);
 }
 
 .nav-container {
-    font-size: larger;
     width: min(1240px, 100%);
-    height: 76px;
+    min-height: 82px;
     margin: 0 auto;
-    padding: 0 10px 0 18px;
+    padding: 0 12px 0 22px;
+
     display: flex;
     align-items: center;
     gap: 30px;
-    background: rgba(255,255,255,.94);
-    border: 1px solid rgba(7,26,51,.08);
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(7, 26, 51, 0.08);
     border-radius: 60px;
-    box-shadow: 0 16px 45px rgba(7,26,51,.09);
+
+    box-shadow: 0 16px 45px rgba(7, 26, 51, 0.09);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    transition: all .35s var(--ease);
+
+    transition:
+        min-height 0.35s var(--ease),
+        box-shadow 0.35s var(--ease);
 }
 
 .site-header.scrolled .nav-container {
-    height: 70px;
-    box-shadow: 0 20px 55px rgba(7,26,51,.14);
+    min-height: 76px;
+    box-shadow: 0 20px 55px rgba(7, 26, 51, 0.14);
 }
+
+
+/* =========================================================
+   BRAND / LOGO
+========================================================= */
 
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+    gap: 13px;
+    height: 100%;
     flex-shrink: 0;
 }
 
 .brand > img {
-    border-radius: 60px;
-    width: 65px;
-    height: 45px;
+    display: block;
+
+    width: 78px;
+    height: 58px;
+
     object-fit: cover;
-    border-radius: 5px;
+
+    background: var(--white);
+    border: 1px solid rgba(7, 26, 51, 0.08);
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 18px rgba(7, 26, 51, 0.12);
+
+    transition:
+        transform 0.3s var(--ease),
+        box-shadow 0.3s ease;
+}
+
+.brand:hover > img {
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(7, 26, 51, 0.16);
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     line-height: 1;
 }
 
 .brand-name {
     color: var(--navy);
     font-family: var(--display);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
-    letter-spacing: -.5px;
+    letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
-    margin-top: 5px;
+    display: block;
+    margin-top: 6px;
+
     color: var(--blue);
+    font-family: var(--sans);
+
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
 .main-nav {
-    font-size: 60%;
     flex: 1;
+
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 3px;
+
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
 
@@ -258,27 +299,40 @@ body.preloader-active {
 
 .nav-links > li > a {
     position: relative;
+
     display: flex;
     align-items: center;
+
     gap: 7px;
+
     padding: 28px 12px;
+
     color: #526073;
-    font-size: 13px;
+
+    font-family: var(--sans);
+    font-size: 14px;
     font-weight: 600;
+
     white-space: nowrap;
 }
 
 .nav-links > li > a::after {
     content: "";
+
     position: absolute;
+
     left: 12px;
     right: 12px;
     bottom: 18px;
+
     height: 2px;
+
     background: var(--blue);
+
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform .25s ease;
+
+    transition: transform 0.25s ease;
 }
 
 .nav-links > li:hover > a,
@@ -293,7 +347,7 @@ body.preloader-active {
 
 .nav-links .fa-chevron-down {
     font-size: 8px;
-    transition: transform .25s ease;
+    transition: transform 0.25s ease;
 }
 
 .has-dropdown:hover .fa-chevron-down {
@@ -301,24 +355,40 @@ body.preloader-active {
 }
 
 
-/* Dropdown */
+/* =========================================================
+   DROPDOWN
+========================================================= */
 
 .nav-dropdown {
     position: absolute;
+
     top: calc(100% - 6px);
     left: 50%;
+
     min-width: 190px;
+
     margin: 0;
     padding: 9px;
+
     list-style: none;
+
     background: var(--white);
+
     border: 1px solid var(--line);
     border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(7,26,51,.13);
+
+    box-shadow:
+        0 20px 50px rgba(7, 26, 51, 0.13);
+
     opacity: 0;
     visibility: hidden;
+
     transform: translate(-50%, 10px);
-    transition: all .25s var(--ease);
+
+    transition:
+        opacity 0.25s var(--ease),
+        visibility 0.25s var(--ease),
+        transform 0.25s var(--ease);
 }
 
 .has-dropdown:hover .nav-dropdown {
@@ -329,10 +399,14 @@ body.preloader-active {
 
 .nav-dropdown li a {
     display: block;
+
     padding: 11px 13px;
+
     color: var(--text);
+
     border-radius: 7px;
-    font-size: 11px;
+
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -342,7 +416,9 @@ body.preloader-active {
 }
 
 
-/* CTA */
+/* =========================================================
+   NAVIGATION CTA
+========================================================= */
 
 .nav-actions {
     flex-shrink: 0;
@@ -350,27 +426,41 @@ body.preloader-active {
 
 .nav-cta {
     min-height: 47px;
-    padding: 0 17px;
+
+    padding: 0 18px;
+
     display: inline-flex;
     align-items: center;
+
     gap: 11px;
+
     color: var(--white) !important;
     background: var(--navy);
-    border-radius: 9px;
-    font-size: 10px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: .2px;
+
+    letter-spacing: 0.2px;
+
+    box-shadow:
+        0 8px 20px rgba(7, 26, 51, 0.12);
 }
 
 .nav-cta i {
     font-size: 11px;
-    transition: transform .25s ease;
+    transition: transform 0.25s ease;
 }
 
 .nav-cta:hover {
     color: var(--white) !important;
     background: var(--blue);
+
     transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(66, 131, 228, 0.25);
 }
 
 .nav-cta:hover i {
@@ -378,26 +468,39 @@ body.preloader-active {
 }
 
 
-/* Mobile hamburger */
+/* =========================================================
+   MOBILE NAVIGATION TOGGLE
+========================================================= */
 
 .mobile-nav-toggle {
     display: none;
+
     width: 44px;
     height: 44px;
+
     padding: 0;
+
     border: 1px solid var(--line);
-    background: var(--white);
     border-radius: 9px;
+
+    background: var(--white);
+
     cursor: pointer;
 }
 
 .mobile-nav-toggle span {
     display: block;
+
     width: 19px;
     height: 2px;
+
     margin: 4px auto;
+
     background: var(--navy);
-    transition: transform .25s ease, opacity .25s ease;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
 
 .mobile-nav-toggle.active span:nth-child(1) {
@@ -411,7 +514,6 @@ body.preloader-active {
 .mobile-nav-toggle.active span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
 }
-
 
 /* =========================================================
    HERO
@@ -546,7 +648,6 @@ body.preloader-active {
     transform: scale(1.07);
 }
 
-
 /* =========================================================
    SECTION TITLES
 ========================================================= */
@@ -589,7 +690,6 @@ body.preloader-active {
     margin: 0 auto 28px;
     background: var(--blue);
 }
-
 
 /* =========================================================
    LEGAL PRACTICE AREA
@@ -696,7 +796,6 @@ body.preloader-active {
     font-size: 13px;
     line-height: 1.8;
 }
-
 
 /* =========================================================
    MISSION / ABOUT
@@ -833,7 +932,6 @@ body.preloader-active {
     transform: scale(1.05);
 }
 
-
 /* =========================================
    SECONDARY IMAGE
    ========================================= */
@@ -892,7 +990,6 @@ body.preloader-active {
     transform: scale(1.06);
 }
 
-
 /* =========================================
    BLUE DECORATIVE ACCENT
    ========================================= */
@@ -916,7 +1013,6 @@ body.preloader-active {
 
     opacity: 0.12;
 }
-
 
 /* =========================================
    DECORATIVE DOTS
@@ -945,7 +1041,6 @@ body.preloader-active {
     z-index: 1;
 }
 
-
 /* =========================================
    RESPONSIVE
    ========================================= */
@@ -968,7 +1063,6 @@ body.preloader-active {
         height: 320px;
     }
 }
-
 
 @media (max-width: 767px) {
 
@@ -1021,7 +1115,6 @@ body.preloader-active {
     }
 }
 
-
 @media (max-width: 480px) {
 
     .about-font-img {
@@ -1060,7 +1153,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* Background overlay */
 .contact-form::before {
     content: "";
@@ -1083,7 +1175,6 @@ body.preloader-active {
     pointer-events: none;
 }
 
-
 /* Decorative glow */
 .contact-form::after {
     content: "";
@@ -1105,12 +1196,10 @@ body.preloader-active {
     pointer-events: none;
 }
 
-
 .contact-form > .container {
     position: relative;
     z-index: 2;
 }
-
 
 /* =====================================================
    FORM WRAPPER
@@ -1134,7 +1223,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* Blue accent line */
 .form-wrapper::before {
     content: "";
@@ -1155,7 +1243,6 @@ body.preloader-active {
     );
 }
 
-
 /* Decorative circle */
 .form-wrapper::after {
     content: "";
@@ -1174,7 +1261,6 @@ body.preloader-active {
 
     pointer-events: none;
 }
-
 
 /* =====================================================
    FORM TITLE
@@ -1198,7 +1284,6 @@ body.preloader-active {
     text-transform: uppercase;
 }
 
-
 .section-tittle-f h2 {
     margin-bottom: 12px;
 
@@ -1210,7 +1295,6 @@ body.preloader-active {
     font-weight: 800;
 }
 
-
 .section-tittle-f p {
     max-width: 600px;
 
@@ -1219,7 +1303,6 @@ body.preloader-active {
     font-size: 14px;
     line-height: 1.8;
 }
-
 
 /* =====================================================
    FORM BOX
@@ -1230,7 +1313,6 @@ body.preloader-active {
 
     margin-bottom: 18px;
 }
-
 
 /* Inputs */
 .form-box input,
@@ -1258,14 +1340,12 @@ body.preloader-active {
         transform 0.3s ease;
 }
 
-
 /* Input */
 .form-box input {
     height: 58px;
 
     padding: 0 18px 0 50px;
 }
-
 
 /* Textarea */
 .form-box textarea {
@@ -1276,7 +1356,6 @@ body.preloader-active {
     resize: vertical;
 }
 
-
 /* Placeholder */
 .form-box input::placeholder,
 .form-box textarea::placeholder {
@@ -1284,7 +1363,6 @@ body.preloader-active {
 
     font-weight: 500;
 }
-
 
 /* Focus state */
 .form-box input:focus,
@@ -1301,7 +1379,6 @@ body.preloader-active {
 
     transform: translateY(-2px);
 }
-
 
 /* =====================================================
    INPUT ICONS
@@ -1326,18 +1403,15 @@ body.preloader-active {
     transition: transform 0.3s ease;
 }
 
-
 /* Move icon when input focused */
 .form-box:focus-within::before {
     transform: scale(1.15);
 }
 
-
 /* User */
 .user-icon::before {
     content: "\f007";
 }
-
 
 /* Email + subject */
 .email-icon::before,
@@ -1345,12 +1419,10 @@ body.preloader-active {
     content: "\f0e0";
 }
 
-
 /* Message */
 .message-icon::before {
     content: "\f075";
 }
-
 
 /* =====================================================
    SELECT
@@ -1362,7 +1434,6 @@ body.preloader-active {
     margin-bottom: 18px;
 }
 
-
 .select-itms select {
     height: 58px;
 
@@ -1373,7 +1444,6 @@ body.preloader-active {
 
     cursor: pointer;
 }
-
 
 /* Select arrow */
 .select-itms::after {
@@ -1397,11 +1467,9 @@ body.preloader-active {
     transition: transform 0.3s ease;
 }
 
-
 .select-itms:focus-within::after {
     transform: rotate(180deg);
 }
-
 
 /* =====================================================
    SUBMIT BUTTON
@@ -1412,7 +1480,6 @@ body.preloader-active {
 
     text-align: left;
 }
-
 
 .submit-btn2 {
     position: relative;
@@ -1448,7 +1515,6 @@ body.preloader-active {
         background 0.3s ease;
 }
 
-
 /* Button shine */
 .submit-btn2::before {
     content: "";
@@ -1471,11 +1537,9 @@ body.preloader-active {
     transition: left 0.6s ease;
 }
 
-
 .submit-btn2:hover::before {
     left: 120%;
 }
-
 
 .submit-btn2:hover {
     color: #ffffff;
@@ -1488,11 +1552,9 @@ body.preloader-active {
         0 18px 35px rgba(66, 131, 228, 0.28);
 }
 
-
 .submit-btn2:active {
     transform: translateY(-1px);
 }
-
 
 /* =====================================================
    FORM ROW SPACING
@@ -1501,7 +1563,6 @@ body.preloader-active {
 .form-wrapper .row {
     row-gap: 5px;
 }
-
 
 /* =====================================================
    RESPONSIVE
@@ -1523,7 +1584,6 @@ body.preloader-active {
         font-size: 32px;
     }
 }
-
 
 @media (max-width: 767px) {
 
@@ -1569,7 +1629,6 @@ body.preloader-active {
         width: 100%;
     }
 }
-
 
 @media (max-width: 480px) {
 
@@ -1688,7 +1747,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* Ambient background glow */
 .testimonial-area::before {
     content: "";
@@ -1709,7 +1767,6 @@ body.preloader-active {
 
     pointer-events: none;
 }
-
 
 /* Second glow */
 .testimonial-area::after {
@@ -1732,13 +1789,11 @@ body.preloader-active {
     pointer-events: none;
 }
 
-
 .testimonial-area > .container {
     position: relative;
 
     z-index: 2;
 }
-
 
 /* =========================================================
    SECTION TITLE
@@ -1749,7 +1804,6 @@ body.preloader-active {
 
     margin-bottom: 55px;
 }
-
 
 .section-tittle-testi span {
     display: inline-block;
@@ -1766,7 +1820,6 @@ body.preloader-active {
     text-transform: uppercase;
 }
 
-
 .section-tittle-testi h2 {
     position: relative;
 
@@ -1780,7 +1833,6 @@ body.preloader-active {
 
     font-weight: 800;
 }
-
 
 /* Accent line */
 .section-tittle-testi h2::before {
@@ -1820,7 +1872,6 @@ body.preloader-active {
 
     overflow: hidden;
 }
-
 
 /* =========================================================
    BACKGROUND DECORATIONS
@@ -1866,7 +1917,6 @@ body.preloader-active {
     pointer-events: none;
 }
 
-
 /* =========================================================
    CONTAINER
 ========================================================= */
@@ -1875,7 +1925,6 @@ body.preloader-active {
     position: relative;
     z-index: 2;
 }
-
 
 /* =========================================================
    SECTION TITLE
@@ -1901,7 +1950,6 @@ body.preloader-active {
     letter-spacing: -0.5px;
 }
 
-
 /* Blue accent */
 .section-tittle-testi h2::before {
     content: "";
@@ -1917,7 +1965,6 @@ body.preloader-active {
 
     border-radius: 10px;
 }
-
 
 /* =========================================================
    TESTIMONIAL CARD
@@ -1954,7 +2001,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* Top blue line */
 .testimonial-caption::before {
     content: "";
@@ -1974,7 +2020,6 @@ body.preloader-active {
     border-radius: 0 0 10px 10px;
 }
 
-
 /* Card hover */
 .testimonial-caption:hover {
     transform: translateY(-6px);
@@ -1986,7 +2031,6 @@ body.preloader-active {
         0 0 35px rgba(66, 131, 228, 0.06);
 }
 
-
 /* =========================================================
    QUOTE
 ========================================================= */
@@ -1994,7 +2038,6 @@ body.preloader-active {
 .testimonial-top-cap {
     position: relative;
 }
-
 
 /* Large quotation mark */
 .testimonial-top-cap::before {
@@ -2017,7 +2060,6 @@ body.preloader-active {
     opacity: 0.75;
 }
 
-
 /* Testimonial text */
 .testimonial-top-cap p {
     margin: 0;
@@ -2032,7 +2074,6 @@ body.preloader-active {
 
     font-style: italic;
 }
-
 
 /* =========================================================
    CLIENT / FOUNDER
@@ -2050,7 +2091,6 @@ body.preloader-active {
 
     margin-top: 38px;
 }
-
 
 /* Client image */
 .founder-img {
@@ -2073,7 +2113,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* If founder image contains an img */
 .founder-img img {
     width: 100%;
@@ -2083,7 +2122,6 @@ body.preloader-active {
 
     border-radius: 50%;
 }
-
 
 /* =========================================================
    REMOVE ANY NUMBERED CAROUSEL CONTENT
@@ -2097,7 +2135,6 @@ body.preloader-active {
 .testimonial-area .owl-dot span {
     font-size: 0 !important;
 }
-
 
 /* Hide unwanted numbered navigation */
 .testimonial-area .owl-nav button {
@@ -2128,7 +2165,6 @@ body.preloader-active {
     text-align: center;
 }
 
-
 /* Remove default list styling */
 .testimonial-area .slick-dots li {
     width: 8px !important;
@@ -2141,7 +2177,6 @@ body.preloader-active {
 
     cursor: pointer;
 }
-
 
 /* Hide the numbers */
 .testimonial-area .slick-dots li button {
@@ -2162,7 +2197,6 @@ body.preloader-active {
 
     cursor: pointer;
 }
-
 
 /* Create the actual dot */
 .testimonial-area .slick-dots li button::before {
@@ -2185,23 +2219,19 @@ body.preloader-active {
         box-shadow 0.3s ease;
 }
 
-
 /* Hover */
 .testimonial-area .slick-dots li:hover button::before {
     background: rgba(255, 255, 255, 0.6);
 }
-
 
 /* Active dot */
 .testimonial-area .slick-dots li.slick-active {
     width: 30px !important;
 }
 
-
 .testimonial-area .slick-dots li.slick-active button {
     width: 30px !important;
 }
-
 
 .testimonial-area .slick-dots li.slick-active button::before {
     width: 30px;
@@ -2222,7 +2252,6 @@ body.preloader-active {
 .testimonial-area .owl-nav {
     display: none !important;
 }
-
 
 /* =========================================================
    RESPONSIVE
@@ -2250,7 +2279,6 @@ body.preloader-active {
         font-size: 34px;
     }
 }
-
 
 @media (max-width: 767px) {
 
@@ -2286,7 +2314,6 @@ body.preloader-active {
         margin-top: 30px;
     }
 }
-
 
 @media (max-width: 480px) {
 
@@ -2371,7 +2398,6 @@ body.preloader-active {
     letter-spacing: 1.4px;
     text-transform: uppercase;
 }
-
 
 /* =========================================================
    CALL TO ACTION
@@ -2463,7 +2489,6 @@ body.preloader-active {
     color: #ffffff;
 }
 
-
 /* =========================================================
    DECORATIVE BACKGROUND
    ========================================================= */
@@ -2490,7 +2515,6 @@ body.preloader-active {
     z-index: -1;
 }
 
-
 /* TOP ACCENT */
 
 .footer-area::after {
@@ -2513,7 +2537,6 @@ body.preloader-active {
     );
 }
 
-
 /* =========================================================
    MAIN FOOTER
    ========================================================= */
@@ -2527,7 +2550,6 @@ body.preloader-active {
     z-index: 2;
 }
 
-
 /* =========================================================
    COLUMN STRUCTURE
    ========================================================= */
@@ -2539,7 +2561,6 @@ body.preloader-active {
 .footer-area .single-footer-caption {
     margin-bottom: 35px;
 }
-
 
 /* =========================================================
    COMPANY / BRAND AREA
@@ -2574,7 +2595,6 @@ body.preloader-active {
     transform: translateY(-3px);
     opacity: 0.88;
 }
-
 
 /* =========================================================
    MISSION / VISION
@@ -2662,7 +2682,6 @@ body.preloader-active {
     overflow: hidden;
 }
 
-
 /* ---------------------------------------------------------
    BACKGROUND DECORATION
 --------------------------------------------------------- */
@@ -2701,7 +2720,6 @@ body.preloader-active {
     pointer-events: none;
 }
 
-
 /* ---------------------------------------------------------
    MAIN FOOTER
 --------------------------------------------------------- */
@@ -2714,7 +2732,6 @@ body.preloader-active {
 
     padding: 90px 0 80px;
 }
-
 
 /* ---------------------------------------------------------
    CONTAINER
@@ -2729,7 +2746,6 @@ body.preloader-active {
     padding-left: 30px;
     padding-right: 30px;
 }
-
 
 /* ---------------------------------------------------------
    FOUR COLUMN GRID
@@ -2748,7 +2764,6 @@ body.preloader-active {
 
     align-items: start;
 }
-
 
 /* ---------------------------------------------------------
    FOOTER COLUMNS
@@ -2778,7 +2793,6 @@ body.preloader-active {
     text-transform: uppercase;
 }
 
-
 /* Heading underline */
 
 .footer-column h2::after {
@@ -2796,7 +2810,6 @@ body.preloader-active {
 
     background: var(--footer-blue);
 }
-
 
 /* ---------------------------------------------------------
    LOGO
@@ -2842,7 +2855,6 @@ body.preloader-active {
         0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
-
 /* ---------------------------------------------------------
    MISSION / VISION
 --------------------------------------------------------- */
@@ -2876,7 +2888,6 @@ body.preloader-active {
 
     text-transform: uppercase;
 }
-
 
 /* Blue vertical indicator */
 
@@ -2913,7 +2924,6 @@ body.preloader-active {
 
     line-height: 1.85;
 }
-
 
 /* =========================================================
    AILEX TINKERERS — SOCIAL ICONS
@@ -2959,7 +2969,6 @@ body.preloader-active {
         box-shadow 0.3s ease;
 }
 
-
 /* SVG */
 
 .site-footer .footer-social svg {
@@ -2976,7 +2985,6 @@ body.preloader-active {
         transform 0.3s ease,
         color 0.3s ease;
 }
-
 
 /* Hover */
 
@@ -2997,13 +3005,11 @@ body.preloader-active {
     transform: scale(1.08);
 }
 
-
 /* Click */
 
 .site-footer .footer-social a:active {
     transform: translateY(-1px) scale(0.96);
 }
-
 
 /* Keyboard focus */
 
@@ -3011,7 +3017,6 @@ body.preloader-active {
     outline: 2px solid #4283e4;
     outline-offset: 4px;
 }
-
 
 /* =========================================================
    MOBILE
@@ -3034,7 +3039,6 @@ body.preloader-active {
     }
 
 }
-
 
 /* ---------------------------------------------------------
    NAVIGATION LINKS
@@ -3082,7 +3086,6 @@ body.preloader-active {
         transform 0.25s ease;
 }
 
-
 /* Small arrow */
 
 .footer-links a::before {
@@ -3118,7 +3121,6 @@ body.preloader-active {
     opacity: 1;
 }
 
-
 /* ---------------------------------------------------------
    NEWSLETTER
 --------------------------------------------------------- */
@@ -3136,7 +3138,6 @@ body.preloader-active {
 
     line-height: 1.8;
 }
-
 
 /* ---------------------------------------------------------
    SUBSCRIBE FORM
@@ -3171,7 +3172,6 @@ body.preloader-active {
     background: rgba(255, 255, 255, 0.055);
 }
 
-
 /* Email input */
 
 .footer-subscribe input {
@@ -3199,7 +3199,6 @@ body.preloader-active {
 .footer-subscribe input::placeholder {
     color: rgba(255, 255, 255, 0.40);
 }
-
 
 /* Subscribe button */
 
@@ -3253,7 +3252,6 @@ body.preloader-active {
     font-size: 10px;
 }
 
-
 /* ---------------------------------------------------------
    SCREEN READER LABEL
 --------------------------------------------------------- */
@@ -3275,7 +3273,6 @@ body.preloader-active {
 
     border: 0;
 }
-
 
 /* ---------------------------------------------------------
    FOOTER BOTTOM
@@ -3315,7 +3312,6 @@ body.preloader-active {
     line-height: 1.6;
 }
 
-
 /* ---------------------------------------------------------
    LARGE TABLETS
 --------------------------------------------------------- */
@@ -3333,7 +3329,6 @@ body.preloader-active {
     }
 
 }
-
 
 /* ---------------------------------------------------------
    TABLETS
@@ -3365,7 +3360,6 @@ body.preloader-active {
     }
 
 }
-
 
 /* ---------------------------------------------------------
    MOBILE
@@ -3405,7 +3399,6 @@ body.preloader-active {
     }
 
 }
-
 
 /* ---------------------------------------------------------
    SMALL PHONES
@@ -3449,7 +3442,6 @@ body.preloader-active {
     }
 
 }
-
 
 /* ---------------------------------------------------------
    REDUCED MOTION

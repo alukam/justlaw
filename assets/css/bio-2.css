@@ -161,14 +161,25 @@ img { max-width: 100%; display: block; }
     gap: 25px;
 }
 
+
 .main-nav a {
+    align-items: center;
+    justify-content: center;
     position: relative;
-    padding: 12px 0;
     color: #4b596c;
     font-size: 13px;
     font-weight: 600;
     transition: color .25s ease;
 }
+
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .main-nav a:hover,
 .main-nav a.active { color: var(--blue-2); }

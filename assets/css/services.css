@@ -886,9 +886,9 @@ img {
 .footer-logo img {
     width: 78px;
     height: auto;
-    padding: 10px;
+    padding: 6px;
     background: var(--ailex-white);
-    border-radius: 100px;
+    border-radius: 80px;
 }
 
 .footer-tittle h4 {
