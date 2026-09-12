@@ -11,14 +11,57 @@
 
 <div id="preloader-active"><div class="preloader-inner"><div class="preloader-circle"></div><div class="preloader-img"><img src="assets/img/logo/logo1.jpeg" alt="Ailex Tinkerers"></div></div></div>
 
-<header class="site-header"><div class="nav-container">
-<a href="index.html" class="brand"><img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers"><div class="brand-text"><span class="brand-name"></span><span class="brand-subtitle"></span></div></a>
-<nav class="main-nav" id="main-navigation"><ul>
-<li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="caseStudies.html">Case Studies</a></li><li><a href="blog.html" class="active">Blog</a></li>
-</ul></nav>
-<div class="nav-actions"><a href="contact.html" class="nav-cta">Book a Consultation <i class="fas fa-arrow-right"></i></a></div>
-<button class="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
-</div></header>
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html"
+           class="brand"
+           aria-label="Ailex Tinkerers Home">
+            <img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers Ltd." style="height: 50px; width: auto;">
+            
+        </a>
+
+        <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="caseStudies.html">Case Studies</a>
+
+            <div class="nav-dropdown-wrapper">
+                <button class="nav-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false">
+                    <span>Insights</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+
+                <div class="nav-dropdown">
+                    <a href="blog.html" class="active">Blog</a>
+                    <a href="single-blog.html">Blog Details</a>
+                    <a href="pages.html">Pages</a>
+                </div>
+            </div>
+
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="contact.html" class="nav-cta">
+                <span>Book a Consultation</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <button class="mobile-nav-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
 
 <main>
 <section class="blog-hero"><div class="container"><div class="hero-content">
@@ -74,8 +117,44 @@
 (function(){
 function hidePreloader(){var l=document.getElementById("preloader-active");if(l){l.classList.add("preloader-hidden");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},450)}}
 document.addEventListener("DOMContentLoaded",function(){setTimeout(hidePreloader,700)});window.addEventListener("load",function(){setTimeout(hidePreloader,250)});
-var t=document.querySelector(".mobile-nav-toggle"),n=document.querySelector(".main-nav");
-if(t&&n){t.addEventListener("click",function(){var o=n.classList.toggle("mobile-nav-open");t.classList.toggle("active",o);t.setAttribute("aria-expanded",o?"true":"false");t.setAttribute("aria-label",o?"Close navigation":"Open navigation")});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("mobile-nav-open");t.classList.remove("active");t.setAttribute("aria-expanded","false")})})}
+var t=document.querySelector(".mobile-nav-toggle"),
+    n=document.querySelector(".main-nav"),
+    dw=document.querySelector(".nav-dropdown-wrapper"),
+    dt=document.querySelector(".nav-dropdown-toggle");
+
+if(t&&n){
+    t.addEventListener("click",function(){
+        var o=n.classList.toggle("mobile-nav-open");
+        t.classList.toggle("active",o);
+        t.setAttribute("aria-expanded",o?"true":"false");
+        t.setAttribute("aria-label",o?"Close navigation":"Open navigation");
+    });
+
+    n.querySelectorAll("a").forEach(function(a){
+        a.addEventListener("click",function(){
+            n.classList.remove("mobile-nav-open");
+            t.classList.remove("active");
+            t.setAttribute("aria-expanded","false");
+            t.setAttribute("aria-label","Open navigation");
+        });
+    });
+}
+
+if(dw&&dt){
+    dt.addEventListener("click",function(e){
+        e.stopPropagation();
+        var o=dw.classList.toggle("open");
+        dt.setAttribute("aria-expanded",o?"true":"false");
+    });
+}
+
+document.addEventListener("click",function(e){
+    if(dw&&!dw.contains(e.target)){
+        dw.classList.remove("open");
+        if(dt)dt.setAttribute("aria-expanded","false");
+    }
+});
+
 document.getElementById("current-year").textContent=new Date().getFullYear();
 var f=document.getElementById("blog-search-form"),i=document.getElementById("blog-search"),s=document.getElementById("search-status");
 if(f)f.addEventListener("submit",function(e){e.preventDefault();var q=i.value.trim().toLowerCase(),c=document.querySelectorAll(".blog-card"),v=0;c.forEach(function(x){var m=!q||x.textContent.toLowerCase().indexOf(q)>-1;x.style.display=m?"":"none";if(m)v++});s.textContent=q?(v+" article"+(v===1?"":"s")+" found."):"";if(q&&!v)s.textContent="No articles found for that search.";});

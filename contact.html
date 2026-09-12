@@ -17,17 +17,16 @@
 
 <div id="preloader-active" aria-hidden="true">
     <div class="preloader-ring"></div>
-    <img src="assets/img/logo/logo1.jpeg" alt="Ailex Tinkerers">
+    <img src="assets/img/logo/logo1.jpeg" alt="Ailex Tinkerers" style="height: 50px; width: auto;">
 </div>
 
 <header class="site-header">
     <div class="nav-container">
-        <a href="index.html" class="brand" aria-label="Ailex Tinkerers home">
-            <img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers">
-            <div class="brand-text">
-                <span class="brand-name"></span>
-                <span class="brand-subtitle"></span>
-            </div>
+        <a href="index.html"
+           class="brand"
+           aria-label="Ailex Tinkerers Home">
+            <img src="assets/img/logo/logo1.jpg" alt="Ailex Tinkerers Ltd.">
+            
         </a>
 
         <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
@@ -35,23 +34,40 @@
             <a href="services.html">Services</a>
             <a href="about.html">About</a>
             <a href="caseStudies.html">Case Studies</a>
-            <a href="blog.html">Blog</a>
-             <a href="contact.html">Pages</a>
 
+            <div class="nav-dropdown-wrapper">
+                <button class="nav-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false">
+                    <span>Insights</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+
+                <div class="nav-dropdown">
+                    <a href="blog.html">Blog</a>
+                    <a href="single-blog.html">Blog Details</a>
+                    <a href="pages.html">Pages</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="active">Contact Us</a>
         </nav>
 
         <div class="nav-actions">
-            <a href="contact.html" class="nav-cta active-cta">
+            <a href="contact.html" class="nav-cta">
                 <span>Book a Consultation</span>
-                <i class="fa fa-arrow-right"></i>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
 
-        <button class="mobile-nav-toggle" type="button"
+        <button class="mobile-nav-toggle"
+                type="button"
                 aria-label="Open navigation"
                 aria-expanded="false"
                 aria-controls="main-navigation">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </div>
 </header>
@@ -92,33 +108,51 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" action="contact_process.php" method="post" id="contactForm">
+                   <form action="https://formspree.io/f/xoeqrebg" method="POST">
+
                         <div class="field-row">
                             <div class="field">
                                 <label for="name">Your name</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                <input type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required>
                             </div>
+
                             <div class="field">
                                 <label for="email">Email address</label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                                <input type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required>
                             </div>
                         </div>
 
                         <div class="field">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                            <input type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="How can we help?"
+                                required>
                         </div>
 
                         <div class="field">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="7"
-                                      placeholder="Tell us about your project, challenge or question..." required></textarea>
+                            <textarea id="message"
+                                    name="message"
+                                    rows="7"
+                                    placeholder="Tell us about your project, challenge or question..."
+                                    required></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">
                             Send message
                             <i class="fas fa-arrow-right"></i>
                         </button>
+
                     </form>
                 </div>
 
@@ -275,29 +309,107 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".mobile-nav-toggle");
-    const nav = document.querySelector(".main-nav");
-    const actions = document.querySelector(".nav-actions");
 
-    if (toggle && nav && actions) {
-        toggle.addEventListener("click", function () {
-            const open = nav.classList.toggle("mobile-nav-open");
-            actions.classList.toggle("mobile-actions-open", open);
-            toggle.classList.toggle("active", open);
-            toggle.setAttribute("aria-expanded", String(open));
-            toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    const mobileToggle =
+        document.querySelector(".mobile-nav-toggle");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+    const dropdownWrapper =
+        document.querySelector(".nav-dropdown-wrapper");
+
+    const dropdownToggle =
+        document.querySelector(".nav-dropdown-toggle");
+
+    if (mobileToggle && mainNav) {
+
+        mobileToggle.addEventListener("click", function () {
+
+            const isOpen =
+                mainNav.classList.toggle("mobile-nav-open");
+
+            mobileToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            mobileToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation"
+                    : "Open navigation"
+            );
         });
 
-        nav.querySelectorAll("a").forEach(function (link) {
+        mainNav.querySelectorAll("a").forEach(function (link) {
+
             link.addEventListener("click", function () {
-                nav.classList.remove("mobile-nav-open");
-                actions.classList.remove("mobile-actions-open");
-                toggle.classList.remove("active");
-                toggle.setAttribute("aria-expanded", "false");
-                toggle.setAttribute("aria-label", "Open navigation");
+
+                mainNav.classList.remove(
+                    "mobile-nav-open"
+                );
+
+                mobileToggle.classList.remove(
+                    "active"
+                );
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
             });
         });
     }
+
+    if (dropdownWrapper && dropdownToggle) {
+
+        dropdownToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                const isOpen =
+                    dropdownWrapper.classList.toggle(
+                        "open"
+                    );
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+            }
+        );
+    }
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            dropdownWrapper &&
+            !dropdownWrapper.contains(event.target)
+        ) {
+
+            dropdownWrapper.classList.remove("open");
+
+            if (dropdownToggle) {
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    });
 
     const year = document.getElementById("year");
     if (year) year.textContent = new Date().getFullYear();
@@ -308,26 +420,33 @@ document.addEventListener("DOMContentLoaded", function () {
             const button = form.querySelector(".submit-btn");
             if (button) {
                 button.classList.add("sending");
-                button.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+                button.innerHTML =
+                    'Sending... <i class="fas fa-spinner fa-spin"></i>';
             }
         });
     }
+
 });
 
 function hidePreloader() {
     const loader = document.getElementById("preloader-active");
+
     if (!loader) return;
+
     loader.classList.add("preloader-hidden");
+
     setTimeout(function () {
-        if (loader.parentNode) loader.parentNode.removeChild(loader);
+        if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+        }
     }, 450);
 }
 
 window.addEventListener("load", function () {
     setTimeout(hidePreloader, 250);
 });
+
 setTimeout(hidePreloader, 1200);
 </script>
-
 </body>
 </html>

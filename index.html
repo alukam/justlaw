@@ -65,151 +65,145 @@
     </div>
 
 
-    <!-- =====================================================
-         PREMIUM NAVIGATION
-    ====================================================== -->
+   <!-- =====================================================
+     AILEX TINKERERS NAVIGATION
+====================================================== -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="nav-container">
+    <div class="nav-container">
 
-            <!-- LOGO -->
+        <!-- LOGO -->
+        <a href="index.html"
+           class="brand"
+           aria-label="Ailex Tinkerers Home">
 
-            <a
-                href="index.html"
-                class="brand"
-                aria-label="Ailex Tinkerers Home">
+            <img
+                src="assets/img/logo/logo1.jpg"
+                alt="Ailex Tinkerers Ltd." style="height: 50px; width: auto;"
+            >
 
-                <img
-                    src="assets/img/logo/logo1.jpg"
-                    alt="Ailex Tinkerers Ltd." style="height: 50px; width: auto;">
+           
+        </a>
 
-                <div class="brand-text">
-                    <!-- Optional brand text -->
-                </div>
 
+        <!-- =================================================
+             MAIN NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="main-nav"
+            id="main-navigation"
+            aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
             </a>
 
 
-            <!-- NAVIGATION -->
-
-            <nav
-                class="main-nav"
-                id="main-navigation"
-                aria-label="Main navigation">
-
-                <ul class="nav-links">
-
-                    <li>
-                        <a
-                            href="index.html"
-                            class="active">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.html">
-                            Services
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="caseStudies.html">
-                            Case Studies
-                        </a>
-                    </li>
-
-                    <!-- DROPDOWN -->
-
-                    <li class="has-dropdown">
-
-                        <a href="blog.html">
-
-                            Insights
-
-                            <i
-                                class="fa fa-chevron-down"
-                                aria-hidden="true">
-                            </i>
-
-                        </a>
-
-                        <ul class="nav-dropdown">
-
-                            <li>
-                                <a href="blog.html">
-                                    Blog
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="single-blog.html">
-                                    Blog Details
-                                </a>
-                            </li>
-                    <li>
-                        <a href="contact.html">
-                            Pages
-                        </a>
-                    </li>
-                            
-
-                        </ul>
-
-                    </li>
-
-                </ul>
-
-            </nav>
+            <a href="services.html">
+                Services
+            </a>
 
 
-            <!-- CONSULTATION BUTTON -->
+            <a href="about.html">
+                About
+            </a>
 
-            <div class="nav-actions">
 
-                <a
-                    href="contact.html"
-                    class="nav-cta">
+            <a href="caseStudies.html">
+                Case Studies
+            </a>
 
-                    <span>
-                        Book a Consultation
-                    </span>
+
+            <!-- INSIGHTS DROPDOWN -->
+            <div class="nav-dropdown-wrapper">
+
+                <button
+                    class="nav-dropdown-toggle"
+                    type="button"
+                    aria-expanded="false">
+
+                    <span>Insights</span>
 
                     <i
-                        class="fa fa-arrow-right"
+                        class="fas fa-chevron-down"
                         aria-hidden="true">
                     </i>
 
-                </a>
+                </button>
+
+
+                <div class="nav-dropdown">
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="single-blog.html">
+                        Blog Detail
+                    </a>
+
+                    <a href="pages.html">
+                        Pages
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <!-- MOBILE TOGGLE -->
+            <a href="contact.html">
+                Contact Us
+            </a>
 
-            <button
-                class="mobile-nav-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false"
-                aria-controls="main-navigation">
+        </nav>
 
-                <span></span>
-                <span></span>
-                <span></span>
 
-            </button>
+        <!-- =================================================
+             CONSULTATION BUTTON
+        ================================================== -->
+
+        <div class="nav-actions">
+
+            <a
+                href="contact.html"
+                class="nav-cta">
+
+                <span>
+                    Book a Consultation
+                </span>
+
+                <i
+                    class="fas fa-arrow-right"
+                    aria-hidden="true">
+                </i>
+
+            </a>
 
         </div>
 
-    </header>
+
+        <!-- =================================================
+             MOBILE MENU BUTTON
+        ================================================== -->
+
+        <button
+            class="mobile-nav-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="main-navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
 
 
     <!-- =====================================================
@@ -2168,185 +2162,242 @@ SOLUTIONS
          CUSTOM JAVASCRIPT
     ====================================================== -->
 
-    <script>
+<script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-
-
-            /* =================================================
-               CUSTOM COUNTERS
-            ================================================== */
-
-            const counters =
-                document.querySelectorAll(".counter");
+document.addEventListener("DOMContentLoaded", function () {
 
 
-            counters.forEach(counter => {
+    /* =================================================
+       CUSTOM COUNTERS
+    ================================================== */
 
-                const target =
-                    parseInt(
-                        counter.getAttribute("data-target"),
-                        10
-                    );
+    const counters = document.querySelectorAll(".counter");
 
 
-                let current = 0;
+    counters.forEach(function (counter) {
 
-                const duration = 2000;
+        const target = parseInt(
+            counter.getAttribute("data-target"),
+            10
+        );
 
-                const increment =
-                    target / (duration / 16);
+        let current = 0;
 
+        const duration = 2000;
 
-                function updateCounter() {
-
-                    current += increment;
-
-
-                    if (current < target) {
-
-                        counter.textContent =
-                            Math.floor(current);
-
-                        requestAnimationFrame(
-                            updateCounter
-                        );
-
-                    } else {
-
-                        counter.textContent =
-                            target;
-
-                    }
-
-                }
+        const increment = target / (duration / 16);
 
 
-                updateCounter();
+        function updateCounter() {
 
-            });
+            current += increment;
 
 
-            /* =================================================
-               MOBILE NAVIGATION
-            ================================================== */
+            if (current < target) {
 
-            const toggle =
-                document.querySelector(
-                    ".mobile-nav-toggle"
+                counter.textContent =
+                    Math.floor(current);
+
+                requestAnimationFrame(
+                    updateCounter
                 );
 
-            const nav =
-                document.querySelector(
-                    ".main-nav"
-                );
+            } else {
 
-            const actions =
-                document.querySelector(
-                    ".nav-actions"
-                );
-
-
-            if (
-                toggle &&
-                nav &&
-                actions
-            ) {
-
-                toggle.addEventListener(
-                    "click",
-                    function () {
-
-                        const isOpen =
-                            !nav.classList.contains(
-                                "mobile-nav-open"
-                            );
-
-
-                        nav.classList.toggle(
-                            "mobile-nav-open",
-                            isOpen
-                        );
-
-
-                        actions.classList.toggle(
-                            "mobile-actions-open",
-                            isOpen
-                        );
-
-
-                        toggle.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-
-                        toggle.setAttribute(
-                            "aria-expanded",
-                            isOpen
-                                ? "true"
-                                : "false"
-                        );
-
-
-                        toggle.setAttribute(
-                            "aria-label",
-                            isOpen
-                                ? "Close navigation"
-                                : "Open navigation"
-                        );
-
-                    }
-                );
-
-
-                /* Close mobile menu after navigation */
-
-                const links =
-                    nav.querySelectorAll(
-                        "a"
-                    );
-
-
-                links.forEach(link => {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            nav.classList.remove(
-                                "mobile-nav-open"
-                            );
-
-                            actions.classList.remove(
-                                "mobile-actions-open"
-                            );
-
-                            toggle.classList.remove(
-                                "active"
-                            );
-
-                            toggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                            toggle.setAttribute(
-                                "aria-label",
-                                "Open navigation"
-                            );
-
-                        }
-                    );
-
-                });
+                counter.textContent = target;
 
             }
 
+        }
+
+
+        updateCounter();
+
+    });
+
+
+    /* =================================================
+       MOBILE NAVIGATION
+    ================================================== */
+
+    const mobileToggle =
+        document.querySelector(".mobile-nav-toggle");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+
+    if (mobileToggle && mainNav) {
+
+        mobileToggle.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    mainNav.classList.toggle(
+                        "mobile-nav-open"
+                    );
+
+
+                mobileToggle.classList.toggle(
+                    "active",
+                    isOpen
+                );
+
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+
+                mobileToggle.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation"
+                        : "Open navigation"
+                );
+
+            }
+        );
+
+
+        /* Close mobile menu after clicking a link */
+
+        const navLinks =
+            mainNav.querySelectorAll("a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mainNav.classList.remove(
+                        "mobile-nav-open"
+                    );
+
+
+                    mobileToggle.classList.remove(
+                        "active"
+                    );
+
+
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    mobileToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation"
+                    );
+
+                }
+            );
+
         });
 
-    </script>
+    }
 
+
+    /* =================================================
+       INSIGHTS DROPDOWN
+    ================================================== */
+
+    const dropdownWrapper =
+        document.querySelector(
+            ".nav-dropdown-wrapper"
+        );
+
+    const dropdownToggle =
+        document.querySelector(
+            ".nav-dropdown-toggle"
+        );
+
+
+    if (dropdownWrapper && dropdownToggle) {
+
+        dropdownToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+
+                const isOpen =
+                    dropdownWrapper.classList.toggle(
+                        "open"
+                    );
+
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       CLOSE INSIGHTS DROPDOWN
+       WHEN CLICKING OUTSIDE
+    ================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                dropdownWrapper &&
+                !dropdownWrapper.contains(
+                    event.target
+                )
+            ) {
+
+                dropdownWrapper.classList.remove(
+                    "open"
+                );
+
+
+                if (dropdownToggle) {
+
+                    dropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* =================================================
+       CURRENT YEAR
+    ================================================== */
+
+    const currentYear =
+        document.getElementById("current-year");
+
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+});
+
+</script>
 
 </body>
 
