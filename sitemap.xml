@@ -4,9 +4,15 @@
     <loc>https://ailex.solutions/</loc>
   </url>
   <url>
-    <loc>https://ailex.solutions/about.html</loc>
+    <loc>https://ailex.solutions/about</loc>
   </url>
   <url>
-    <loc>https://ailex.solutions/contact.html</loc>
+    <loc>https://ailex.solutions/contact</loc>
+  </url>
+  <url>
+    <loc>https://ailex.solutions/ai-training</loc>
+  </url>
+  <url>
+    <loc>https://ailex.solutions/services</loc>
   </url>
 </urlset>
