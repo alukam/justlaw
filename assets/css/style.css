@@ -13,8 +13,53 @@
 .section-tittle{margin-bottom:46px}.section-tittle h2{margin-bottom:0;color:var(--ax-navy);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;line-height:1.18;letter-spacing:-.045em}.section-tittle h2::after{display:block;width:48px;height:4px;margin:19px auto 0;border-radius:10px;background:var(--ax-blue);content:""}.section-tittle-l h2::after,.section-tittle-f h2::after{margin-left:0}
 /* Service cards */
 .legal-practice-area{padding:96px 0 104px;background:#fff}.single-practice{position:relative;height:100%;overflow:hidden;border:1px solid var(--ax-line);border-radius:var(--ax-radius);background:#fff;box-shadow:0 7px 24px rgba(7,26,51,.045);transition:transform var(--ax-ease),box-shadow var(--ax-ease),border-color var(--ax-ease)}.single-practice:hover{transform:translateY(-7px);border-color:rgba(66,131,228,.48);box-shadow:var(--ax-shadow-hover)}.practice-img{position:relative;overflow:hidden;aspect-ratio:16/10;background:#e9eef6}.practice-img>img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 500ms ease}.single-practice:hover .practice-img>img{transform:scale(1.045)}.practice-icon{position:absolute;right:18px;bottom:18px;display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;padding:10px;border:1px solid rgba(255,255,255,.55);border-radius:14px;background:var(--ax-blue);color:#fff;box-shadow:0 8px 22px rgba(7,26,51,.18)}.practice-icon i{color:#fff;font-size:20px}.practice-icon span{color:#fff;font-size:12px;font-weight:800}.practice-caption,.practice-caption2{padding:25px 25px 28px}.practice-caption h4,.practice-caption2 h4{margin:0 0 12px;font-size:20px;line-height:1.35;letter-spacing:-.025em}.practice-caption h4 a{color:var(--ax-navy)}.practice-caption h4 a:hover{color:var(--ax-blue-dark)}.practice-caption p,.practice-caption2 p{margin:0;color:var(--ax-text);font-size:14px;line-height:1.8}.practice-caption2 .read-more1{display:inline-flex;align-items:center;gap:8px;margin-top:19px;color:var(--ax-blue-dark);font-size:13px;font-weight:800}.practice-caption2 .read-more1::after{content:"→";transition:transform var(--ax-ease)}.practice-caption2 .read-more1:hover::after{transform:translateX(4px)}
+
+
 /* Philosophy / about */
-.about-low-area{position:relative;overflow:hidden;padding:105px 0;background:var(--ax-bg)}.about-low-area .row{align-items:center}.about-caption{max-width:500px}.about-caption p{color:var(--ax-text);font-size:16px;line-height:1.9}.about-caption .company-disclaimer{border-left:3px solid var(--ax-blue)!important;border-radius:0 10px 10px 0;background:#edf4ff!important;color:#34435a!important;font-size:14px}.about-img{position:relative;min-height:430px}.about-font-img{position:relative;z-index:2;width:68%;overflow:hidden;border-radius:18px;box-shadow:var(--ax-shadow)}.about-font-img img{display:block;width:100%;min-height:360px;object-fit:cover}.about-back-img{position:absolute;top:55px;right:0;width:48%;overflow:hidden;border:8px solid var(--ax-bg);border-radius:18px;box-shadow:var(--ax-shadow)}.about-back-img img{display:block;width:100%;min-height:260px;object-fit:cover}.about-bg{background-color:var(--ax-bg)}
+.about-img {
+  position: relative;
+  display: block; /* Changed from inline-block so percentage widths calculate properly */
+  width: 100%;
+  min-height: 450px; /* Ensures the container doesn't collapse around the absolute image */
+}
+
+/* Front / Lower-left image */
+.about-font-img {
+  position: relative;
+  z-index: 2;
+  width: 75%; /* Reduced from 88% so it doesn't block the right image */
+  margin-top: 80px; /* Pushes it down so the top-right image peeks out cleanly */
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: var(--ax-shadow);
+}
+
+.about-font-img img {
+  display: block;
+  width: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+/* Back / Upper-right image */
+.about-back-img {
+  position: absolute; /* Changed from fixed so it stays anchored to .about-img */
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 65%; /* Increased from 48% for better balance */
+  overflow: hidden;
+  border: 8px solid var(--ax-bg);
+  border-radius: 18px;
+  box-shadow: var(--ax-shadow);
+}
+
+.about-back-img img {
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
 /* Consultation form */
 .contact-form{position:relative;isolation:isolate;overflow:hidden;padding:100px 0;background-color:var(--ax-navy);background-size:cover;background-position:center}.contact-form::before{position:absolute;z-index:-1;inset:0;background:linear-gradient(135deg,rgba(7,26,51,.94),rgba(13,40,72,.9));content:""}.form-wrapper{padding:clamp(25px,4vw,52px);border:1px solid rgba(255,255,255,.65);border-radius:22px;background:rgba(255,255,255,.985);box-shadow:0 28px 80px rgba(0,0,0,.2)}.section-tittle-f h2{color:var(--ax-navy)}.form-box{position:relative;margin-bottom:18px}.form-box input,.form-box textarea,.select-itms select,.footer-subscribe input{display:block;width:100%;min-height:54px;padding:14px 16px;border:1px solid #dbe2ec;border-radius:10px;outline:0;background:#fff;color:var(--ax-ink);font-size:14px;box-shadow:none;transition:border-color var(--ax-ease),box-shadow var(--ax-ease)}.form-box textarea{min-height:150px;resize:vertical}.form-box input::placeholder,.form-box textarea::placeholder,.footer-subscribe input::placeholder{color:#8b95a4}.form-box input:focus,.form-box textarea:focus,.select-itms select:focus,.footer-subscribe input:focus{border-color:var(--ax-blue);box-shadow:0 0 0 4px rgba(66,131,228,.12)}.select-itms{width:100%}.select-itms select{appearance:auto;cursor:pointer}.form-privacy-note{color:var(--ax-text)!important;font-size:12px!important}.form-privacy-note a{color:var(--ax-blue-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}.submit-info{margin-top:8px}.submit-btn2,.submit-info button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border:1px solid var(--ax-blue);border-radius:10px;background:var(--ax-blue);color:#fff;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 10px 24px rgba(66,131,228,.22);transition:transform var(--ax-ease),background var(--ax-ease),box-shadow var(--ax-ease)}.submit-btn2:hover,.submit-info button:hover{transform:translateY(-2px);border-color:var(--ax-blue-dark);background:var(--ax-blue-dark);box-shadow:0 14px 28px rgba(66,131,228,.3)}
 /* Focus-area section */
