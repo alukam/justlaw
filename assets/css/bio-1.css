@@ -1108,3 +1108,73 @@ img { max-width: 100%; display: block; }
         flex-direction: column;
     }
 }
+
+
+/* Professional connection section */
+.profile-connect {
+    margin: 32px 0;
+    padding: 26px;
+    background: #f3f7fc;
+    border: 1px solid #dce7f5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.connect-label {
+    color: #4283e4;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.connect-content h3 {
+    margin: 10px 0;
+    color: #071a33;
+    font-size: 21px;
+}
+
+.connect-content p {
+    margin: 0;
+    color: #526174;
+    line-height: 1.7;
+    max-width: 440px;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    background: #0a66c2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background: #084b91;
+    color: #fff;
+}
+
+.linkedin-icon {
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.linkedin-arrow {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .profile-connect {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
